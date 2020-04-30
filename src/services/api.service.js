@@ -15,6 +15,16 @@ class ApiService {
             console.error(error);
         }
     }
+
+    async fetchPosts() {
+        try {
+            const request = new Request(`${this.url}/posts.json`);
+            const response = await fetch(request);
+            return await response.json();
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }
 
 export const apiService = new ApiService('https://spa-blog-1d5b0.firebaseio.com');
