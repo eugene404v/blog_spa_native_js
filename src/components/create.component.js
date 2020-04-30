@@ -31,6 +31,8 @@ function submitHandler(event) {
             ...this.form.value()
         };
 
+        this.form.clear();
+
         console.log(formData);
     }
 
