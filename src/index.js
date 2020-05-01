@@ -10,12 +10,12 @@ new HeaderComponent('header');
 const navigation = new NavigationComponent('navigation');
 const loader = new LoaderComponent('loader');
 const create = new CreateComponent('create');
-const favorites = new FavoritesComponent('favorite');
+const favorites = new FavoritesComponent('favorite', {loader});
 const posts = new PostsComponent('posts', {loader});
 
 
 navigation.registerTabs([
     {name: 'create', component: create},
-    {name: 'favorites', component: favorites},
+    {name: 'favorite', component: favorites},
     {name: 'posts', component: posts}
 ]);

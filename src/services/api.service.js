@@ -25,6 +25,16 @@ class ApiService {
             console.error(error);
         }
     }
+
+    async fetchPostById(id) {
+        try {
+            const request = new Request(`${this.url}/posts/${id}.json`);
+            const response = await fetch(request);
+            return await response.json();
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }
 
 export const apiService = new ApiService('https://spa-blog-1d5b0.firebaseio.com');
